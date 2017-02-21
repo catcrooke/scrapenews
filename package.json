@@ -1,0 +1,27 @@
+{
+  "name": "scrapenews",
+  "version": "1.0.0",
+  "description": "This assignment involves creating a web app that lets users leave comments on the latest news using Mongoose and Cheerio to scrape news from another site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catcrooke/scrapenews.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catcrooke/scrapenews/issues"
+  },
+  "homepage": "https://github.com/catcrooke/scrapenews#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "cheerio": "^0.22.0",
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.8.4",
+    "request": "^2.79.0"
+  }
+}
