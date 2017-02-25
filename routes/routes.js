@@ -1,9 +1,19 @@
 // // require express
-// // var express = require("express");
+var path = require("path");
+var express = require("express");
+var app = express();
 
+var Article = require("../models/articleschema.js");
+// var User = require("./models/userschema.js");
 
+var db = require("../connection.js");
 // // Routes
 // // ======
+module.exports = function(app) {
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname + "/../public/landing_page_scraper/index.html"));
+    });
+};
 
 // // Route to see articles we have added
 // app.get("/article", function(req, res) {

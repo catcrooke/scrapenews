@@ -1,19 +1,25 @@
 // Require mongoose
 var mongoose = require("mongoose");
+var db = require("../connection.js");
 
 // Create a Schema class with mongoose
 var Schema = mongoose.Schema;
 
-// Create a NoteSchema with the Schema class
+// Create an ArticleSchema with the Schema class
 var ArticleSchema = new Schema({
     // title: a string
     title: {
-        type: String
+        type: String,
+        trim: true,
+        required: "Title is Required"
     },
-    // body: a string
-    body: {
-        type: String
-    }
+    // link: a string
+    link: {
+        type: String,
+        trim: true,
+        // required: "Link is Required"
+
+    },
 });
 
 // Make an Article model with the ArticleSchema

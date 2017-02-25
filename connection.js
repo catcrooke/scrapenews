@@ -1,10 +1,10 @@
+// mongoose allows me to use a schema
 var mongoose = require("mongoose");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
 // Database configuration with mongoose
-
 mongoose.connect("mongodb://localhost/news");
 var db = mongoose.connection;
 

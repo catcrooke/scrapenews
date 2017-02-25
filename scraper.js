@@ -5,9 +5,13 @@ var request = require("request");
 // Scrapes our HTML
 var cheerio = require("cheerio");
 
+var Article = require("./models/articleschema.js");
+var User = require("./models/userschema.js");
+
 module.exports = function(app) {
 
-    // Making a request call for reddit's "webdev" board. The page's HTML is saved as the callback's third argument
+
+    // Making a request call for washington post. The page's HTML is saved as the callback's third argument
     request("https://www.washingtonpost.com", function(error, response, html) {
 
         // Load the HTML into cheerio and save it to a variable
@@ -32,6 +36,17 @@ module.exports = function(app) {
             result.push({
                 title: title,
                 link: link
+            });
+
+            var scrapeInfo = new Article({ title: title, link: link });
+            // var Tank = mongoose.model('Tank', schema);
+
+            scrapeInfo.save(function(err) {
+                if (err) console.log(err);
+                // saved!
+                else {
+                    console.log(scrapeInfo);
+                }
             });
 
         });
