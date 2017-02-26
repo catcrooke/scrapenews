@@ -15,7 +15,7 @@ module.exports = function(app) {
     });
 
     // // Route to see articles we have added
-app.get("/scrape", function(req, res) {
+app.get("/scraper", function(req, res) {
     // Find all articles in the article collection with our article model
     article.find({}, function(error, doc) {
         // Send any errors to the browser
@@ -24,7 +24,7 @@ app.get("/scrape", function(req, res) {
         }
         // Or send the doc to the browser
         else {
-            res.send(doc);
+            res.sendFile(path.join(__dirname + "../layouts/scrape.handlebars"));
         }
     });
 });
