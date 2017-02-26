@@ -15,19 +15,19 @@ module.exports = function(app) {
     });
 
     // // Route to see articles we have added
-// app.get("/article", function(req, res) {
-//     // Find all articles in the article collection with our article model
-//     article.find({}, function(error, doc) {
-//         // Send any errors to the browser
-//         if (error) {
-//             res.send(error);
-//         }
-//         // Or send the doc to the browser
-//         else {
-//             res.send(doc);
-//         }
-//     });
-// });
+app.get("/scrape", function(req, res) {
+    // Find all articles in the article collection with our article model
+    article.find({}, function(error, doc) {
+        // Send any errors to the browser
+        if (error) {
+            res.send(error);
+        }
+        // Or send the doc to the browser
+        else {
+            res.send(doc);
+        }
+    });
+});
 };
 
 
