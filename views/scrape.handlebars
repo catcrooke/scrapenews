@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+	  <div class="col">
+	    <ul>
+	      {{#each ArticleSchema}}
+	        {{#unless this.savedArticle}}
+	          <li>
+	            {{this.ArticleSchema}}
+
+	            <form action="/update?_method=PUT" method="POST">
+	              <input type="hidden" value={{id}} name="id" id="all-articles">
+	              <input type="hidden" value={{ArticleSchema} name="ArticleSchema" id="all-articles">
+	              <input type="hidden" value="true" name="saved" class="saved-article" id="saved-article">
+	              <button type="submit">Save</button>
+	            </form>
+	          </li>
+	        {{/unless}}
+	      {{/each}}
+	    </ul>
+	  </div>
+	</div>
+	
+</div>
